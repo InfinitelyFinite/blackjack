@@ -21,25 +21,28 @@ This is a command-line Blackjack game where the player competes against the deal
 ## Sample Game Output
 <img width="342" alt="Screenshot 2024-09-17 at 19 39 57" src="https://github.com/user-attachments/assets/33b5ed4d-656d-4107-9ada-e7aed4388cc6">
 
-# Requirements
-Python 3.x
-No external libraries are required.
+## Requirements
+- Python 3.x
+- No external libraries are required.
 
-# How to Run
-  - Clone the repository:
+## How to Run
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/infinitelyfinite/blackjack.git
+    ```
 
-    - git clone https://github.com/infinitelyfinite/blackjack.git
+2. **Navigate to the Project Directory:**
+    ```bash
+    cd blackjack
+    ```
 
-  - Navigate to the project directory:
+3. **Run the Game:**
+    ```bash
+    python game.py
+    ```
 
-    - cd blackjack
-
-  - Run the game:
-
-    - python game.py
-
-
-# Future Improvements
+## Future Improvements
 - Adding a betting system to the game.
 - Implementing a graphical user interface (GUI) using a library like Pygame.
 - Enhancing the AI of the dealer for more strategic gameplay.
+
