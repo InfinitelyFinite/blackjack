@@ -19,49 +19,25 @@ This is a command-line Blackjack game where the player competes against the deal
 3. Once both turns are completed, the game announces the winner.
 
 ## Sample Game Output
------------
-BEGIN
------------
-
-Player  Dealer
-| 5♠  | **  |
-| 7♦  | 4♣  |
-
-You have 12. Hit, stand or withdraw? [h/s/w] h
-
-Player  Dealer
-| 5♠  | **  |
-| 7♦  | 4♣  |
-| 9♠  |     |
-
-You have 21. Hit, stand or withdraw? [h/s/w] s
-
-Round 2 Dealer's turn
-
-Player  Dealer
-| 5♠  | 3♠  |
-| 7♦  | 4♣  |
-| 9♠  |     |
-
------------
-GAME RESULT
------------
-Player total: 21
-Dealer total: 17
-
-Player wins with 21!
+<img width="342" alt="Screenshot 2024-09-17 at 19 39 57" src="https://github.com/user-attachments/assets/33b5ed4d-656d-4107-9ada-e7aed4388cc6">
 
 # Requirements
 Python 3.x
 No external libraries are required.
 
 # How to Run
-Clone the repository:
-git clone https://github.com/infinitelyfinite/blackjack.git
-Navigate to the project directory:
-cd blackjack
-Run the game:
-python game.py
+  - Clone the repository:
+
+    - git clone https://github.com/infinitelyfinite/blackjack.git
+
+  - Navigate to the project directory:
+
+    - cd blackjack
+
+  - Run the game:
+
+    - python game.py
+
 
 # Future Improvements
 - Adding a betting system to the game.
