@@ -1,6 +1,6 @@
-def display_cards(player_cards, dealer_cards, dealer_hidden=True):
+def display_cards(player_cards, dealer_cards, dealer_hidden=True, test=False):
     max_rounds = max(len(player_cards), len(dealer_cards))
-    print("\nPlayer  Dealer")
+    display_output = "Player  Dealer\n"
     
     for i in range(max_rounds):
         player_card = player_cards[i] if i < len(player_cards) else "   "
@@ -9,24 +9,34 @@ def display_cards(player_cards, dealer_cards, dealer_hidden=True):
         else:
             dealer_card = dealer_cards[i] if i < len(dealer_cards) else "   "
         
-        print(f"| {player_card:<3} | {dealer_card:<3} |")
-    print()
+        display_output += f"| {player_card:<3} | {dealer_card:<3} |\n"
 
-def win_loss(user_hand, dealer_hand):
+    if test:
+        return display_output
+    else:
+        print(display_output)
+        return ""
+
+def win_loss(user_hand, dealer_hand, test=False):
     user_value, user_cards = user_hand
     dealer_value, dealer_cards = dealer_hand
+    result_output = ''
     
-    display_cards(user_cards, dealer_cards, dealer_hidden=False)
-
-    print("-----------\nGAME RESULT\n-----------")
-    print("Player total: {}\nDealer total: {}\n".format(user_value, dealer_value))
+    result_output += display_cards(user_cards, dealer_cards, dealer_hidden=False, test=True)
+    result_output += f"Player total: {user_value}\nDealer total: {dealer_value}\n"
+    
     if user_value > 21:
-        print("Player busts, dealer wins")
+        result_output += "Player busts, dealer wins\n"
     elif dealer_value > 21:
-        print("Dealer busts, player wins")
+        result_output += "Dealer busts, player wins\n"
     elif user_value > dealer_value:
-        print("Player wins with {}!".format(user_value))
+        result_output += f"Player wins with {user_value}!\n"
     elif dealer_value > user_value:
-        print("Dealer wins with {}!".format(dealer_value))
+        result_output += f"Dealer wins with {dealer_value}!\n"
     else:
-        print("Push ({}).".format(user_value))
+        result_output += f"Push ({user_value}).\n"
+
+    if not test:
+        print(result_output)
+    
+    return result_output if test else ""

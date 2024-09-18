@@ -20,6 +20,9 @@ def draw_card():
     return full_card, card_value
 
 def dealer_turn(dealer_cards=[], dealer_value=0):
+    if dealer_value > 17:
+        return dealer_value, dealer_cards
+
     card_rank = randint(2, 11)
     card_suit = randint(1, 4)
     suit_map = {1: '♠', 2: '♣', 3: '♥', 4: '♦'}
