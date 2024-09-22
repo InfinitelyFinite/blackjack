@@ -41,6 +41,11 @@ This is a command-line Blackjack game where the player competes against the deal
     python game.py
     ```
 
+4. **Run the Tests:**
+     ```bash
+    pytest
+    ```
+
 ## Future Improvements
 - Adding a betting system to the game.
 - Implementing a graphical user interface (GUI) using a library like Pygame.
