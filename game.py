@@ -43,11 +43,9 @@ def game(test=False):
             game_result = f"Player withdraws with {user_value}.\n"
             return game_output + game_result if test else ''
         else:
-            game_output += "Invalid input, please choose [h]it, [s]tand or [w]ithdraw.\n"
+            print("Invalid input, please choose [h]it, [s]tand or [w]ithdraw.\n")
 
-    if user_value <= 21:
-        game_output += display_cards(user_cards, dealer_cards, dealer_hidden=False, test=test)
-
+    if user_value < 21:
         while dealer_value < 17:
             dealer_value, dealer_cards = dealer_turn(dealer_cards, dealer_value)
             game_output += display_cards(user_cards, dealer_cards, dealer_hidden=False, test=test)
@@ -59,7 +57,20 @@ def game(test=False):
         else:
             print("-----------\nGAME RESULT\n-----------\n")
             game_result = win_loss((user_value, user_cards), (dealer_value, dealer_cards), test=test)
-
+    elif user_value == 21:
+        while dealer_value < 17:
+            dealer_value, dealer_cards = dealer_turn(dealer_cards, dealer_value)
+            game_output += display_cards(user_cards, dealer_cards, dealer_hidden=False, test=test)
+        if dealer_value > 21:
+            print("-----------\nGAME RESULT\n-----------\n")
+            game_result = f"Dealer busts with {dealer_value}. Player wins!\n"
+        elif dealer_value == 21:
+            print("-----------\nGAME RESULT\n-----------\n")
+            game_result = f"Push(21).\n"
+        else:
+            print("-----------\nGAME RESULT\n-----------\n")
+            game_result = win_loss((user_value, user_cards), (dealer_value, dealer_cards), test=test)
+        
     if test:
         return game_output + game_result
     else:
